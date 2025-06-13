@@ -10,7 +10,7 @@ When using the chat interface on an Android device, a large space appears below 
 
 ## Steps to Reproduce
 
-1. Open the chat interface on an Android device.
+1. Open the chat interface on an Android device. [Github Pages Deployment](https://syeduroojkamal.github.io/chat-interface/)
 2. Focus the message input to bring up the keyboard.
 3. Scroll to the bottom of the chat. OR
 4. Send a message using the keyboard's send button.
