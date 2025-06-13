@@ -5,9 +5,11 @@ import type { Dispatch, SetStateAction } from "react";
 export default function MessageInput({
   messages,
   setMessages,
+  className,
 }: {
   messages: Message[];
   setMessages: Dispatch<SetStateAction<Message[]>>;
+  className: string;
 }) {
   const [input, setInput] = useState("");
 
@@ -33,25 +35,27 @@ export default function MessageInput({
   }
 
   return (
-    <form
-      className="flex items-center gap-4 p-4 border-t"
-      onSubmit={handleSubmit}
-    >
-      <input
-        placeholder="Type message here..."
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        aria-label="Message input"
-        className="grow h-10 border-2 border-blue-200 py-6 px-4 rounded-2xl"
-      />
-      <button
-        type="submit"
-        disabled={!input.trim()}
-        aria-label="Send message"
-        className="border-2 border-blue-300 size-12 bg-blue-200 rounded-full"
+    <div className={className}>
+      <form
+        onSubmit={handleSubmit}
+        className="flex items-center gap-4 p-4 border-t bg-green-100"
       >
-        Send
-      </button>
-    </form>
+        <input
+          placeholder="Type message here..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          aria-label="Message input"
+          className="grow h-10 border-2 border-blue-200 py-6 px-4 rounded-2xl"
+        />
+        <button
+          type="submit"
+          disabled={!input.trim()}
+          aria-label="Send message"
+          className="border-2 border-blue-300 size-12 bg-blue-200 rounded-full"
+        >
+          Send
+        </button>
+      </form>
+    </div>
   );
 }
